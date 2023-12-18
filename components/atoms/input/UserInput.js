@@ -1,12 +1,15 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 
-function UserInput() {
+function UserInput(props) {
     return (
         <>
             <Form.Control
                 type="text"
-                placeholder="유저를 입력해주세요"
+                placeholder={props.placeholder}
+                style={{marginBottom : '10px'}}
+                value={props.value}
+                onChange={props.onChange}
             />
         </>
     )
