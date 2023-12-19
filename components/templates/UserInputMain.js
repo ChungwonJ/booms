@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import UserInput from '../atoms/input/UserInput';
 import UserBtn from '../atoms/button/UserBtn';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import { setValue } from '@/redux/Store';
+import UserOrgamisms from '../organisms/UserOrgamisms';
 
-function InputAdd() {
+function UserInputMain() {
   const dispatch = useDispatch();
   const router = useRouter()
-  const value = useSelector(state => state.value);
 
   const [inputs, setInputs] = useState(['']); // 입력 값들을 담을 상태
+  const [select, setSelect] = useState(false)
 
   // 새로운 입력 추가
   const handleAddInput = () => {
     setInputs([...inputs, '']);
   };
-
+console.log('inputs :' ,inputs)
   // 입력 제거
   const handleRemoveInput = (index) => {
     const newInputs = [...inputs];
@@ -33,8 +32,13 @@ function InputAdd() {
   };
 
   const handleClick = () => {
-    dispatch(setValue(inputs));
-    router.push('/Drink')
+    if(inputs.length === 0 ){
+      alert('아이디를 입력해주세요')
+      return;
+    } else {
+      router.push('/Drink')
+      dispatch(setValue(inputs));
+    }
   };
 
   return (
@@ -42,21 +46,16 @@ function InputAdd() {
       <div>
         {inputs.map((input, index) => (
           <div key={index} className='mainUser'>
-            <div>
-              <UserInput
-                value={input}
-                placeholder="유저를 입력해주세요"
-                onChange={(e) => handleChange(index, e.target.value)}
-              />
-            </div>
-            <div>
-              <UserBtn
-                onClick={() => { handleRemoveInput(index) }}
-                btnTxt='삭제'
-                variant="danger"
-                disabled={inputs.length === 1}
-              />
-            </div>
+            <UserOrgamisms
+              value={input}
+              placeholder="유저를 입력해주세요"
+              btnTxt='삭제'
+              variant="danger"
+              select={select}
+              setSelect={setSelect}
+              onChange={(e) => handleChange(index, e.target.value)}
+              onClick={() => { handleRemoveInput(index) }}
+            />
           </div>
         ))}
         <div style={{ display: 'flex', gap: '20px' }}>
@@ -71,12 +70,9 @@ function InputAdd() {
           btnTxt='시작하기'
           variant="success"
         />
-        {/* {value.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))} */}
       </div>
     </>
   );
 }
 
-export default InputAdd;
+export default UserInputMain;

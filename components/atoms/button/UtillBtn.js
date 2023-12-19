@@ -5,7 +5,8 @@ function UtillBtn(props) {
   return (
     <>
       <Button
-        
+        disabled={props.disabled}
+        onClick={props.onClick}
       >
         {props.text}
       </Button>

@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import UserBtn from '../atoms/button/UserBtn';
-import SecretForm from '../molecules/SecretForm';
+import React from 'react'
+import UserBtn from '../atoms/button/UserBtn'
+import SecretFormTwo from '../molecules/SecretFormTwo'
 
-function DrinkOrganisms(props) {
+function UserOrgamisms(props) {
   return (
     <>
       <div className='drinkOrganisms'>
         <div>
-          <SecretForm
+          <SecretFormTwo
             value={props.value}
-            placeholder='벌주를 입력해주세요'
-            text='벌주는 비밀이지요~'
-            drinkInput={props.drinkInput}
+            placeholder='아이디를 입력해주세요'
             select={props.select}
             setSelect={props.setSelect}
             onChange={props.onChange}
@@ -30,4 +28,4 @@ function DrinkOrganisms(props) {
   )
 }
 
-export default DrinkOrganisms
+export default UserOrgamisms

@@ -1,11 +1,11 @@
 import React from 'react'
-import InputAdd from '../components/templates/InputAdd'
+import UserInputMain from '@/components/templates/UserInputMain'
 
 function Main() {
   return (
     <>
       <div className='main'>
-        <InputAdd />
+        <UserInputMain />
       </div>
     </>
   )

@@ -6,7 +6,12 @@ function Header(props) {
   return (
     <>
       <header>
-            <p className="headerTxt" onClick={()=>{Router.push('/')}}>CW BoomS</p>
+            <p 
+                className="headerTxt" 
+                onClick={()=>{Router.push('/')}}
+            >
+                CW BoomS
+            </p>
       </header>
     </>
   );

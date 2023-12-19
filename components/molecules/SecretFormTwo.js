@@ -2,18 +2,15 @@ import React, { useState } from 'react';
 import UserInput from '../atoms/input/UserInput'
 import HideBtn from '../atoms/button/HideBtn'
 
-function SecretForm(props) {
-  const [select, setSelect] = useState(false)
-
+function SecretFormTwo(props) {
   const handleClick = () => {
     if (props.value.length === 0) {
-      alert('벌주를 입력해주세요')
+      alert('유저입력칸이 비어있습니다')
       return
     } else {
-      setSelect(!select)
+      props.setSelect(!props.select)
     }
   }
-
   return (
     <>
       <div className='secretForm'>
@@ -22,17 +19,14 @@ function SecretForm(props) {
             type="text"
             placeholder={props.placeholder}
             style={{ marginBottom: '10px' }}
-            disabled={select === true}
             value={props.value}
             onChange={props.onChange}
           />
-
-          <p className={select ? 'secretInputSucess active' : 'secretInputSucess'}>{props.text}</p>
-
+          <p className={props.select ? 'secretInputSucess active' : 'secretInputSucess'}>{props.text}</p>
         </div>
         <div>
           <HideBtn
-            select={select}
+            select={props.select}
             onClick={() => { handleClick() }}
           />
         </div>
@@ -41,4 +35,4 @@ function SecretForm(props) {
   )
 }
 
-export default SecretForm
+export default SecretFormTwo

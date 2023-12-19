@@ -3,13 +3,13 @@ import UserBtn from '../atoms/button/UserBtn';
 import DrinkOrganisms from '../organisms/DrinkOrganisms';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import { setDrinkValue } from '@/redux/Store';
 
 function DrinkInput() {
   const dispatch = useDispatch();
   const router = useRouter()
   const [drinkInput, setdrinkInput] = useState(['']); // 입력 값들을 담을 상태
+  const [select, setSelect] = useState(false)
 
   // 새로운 입력 추가
   const handleAddInput = () => {
@@ -32,7 +32,7 @@ function DrinkInput() {
 
   const handleClick = () => {
     dispatch(setDrinkValue(drinkInput));
-    // router.push('')
+    router.push('/Game')
   };
 
   return (
@@ -43,6 +43,8 @@ function DrinkInput() {
             <DrinkOrganisms
               value={input}
               disabled={drinkInput.length === 1}
+              select={select}
+              setSelect={setSelect}
               onChange={(e) => handleChange(index, e.target.value)}
               onClick={handleRemoveInput}
             />
@@ -56,7 +58,7 @@ function DrinkInput() {
           />
         </div>
         <UserBtn
-          onClick={() => { router.push('/Game') }}
+          onClick={() => { handleClick() }}
           btnTxt='시작하기'
           variant="success"
         />
