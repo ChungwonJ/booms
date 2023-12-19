@@ -8,6 +8,7 @@ function UserInput(props) {
                 type="text"
                 placeholder={props.placeholder}
                 style={{marginBottom : '10px'}}
+                disabled = {props.disabled}
                 value={props.value}
                 onChange={props.onChange}
             />

@@ -1,4 +1,4 @@
-import DrinkInput from '@/components/molecules/DrinkInput'
+import DrinkInput from '@/components/templates/DrinkInput'
 import React from 'react'
 
 function Drink() {

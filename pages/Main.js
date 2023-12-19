@@ -1,5 +1,5 @@
 import React from 'react'
-import InputAdd from '../components/molecules/InputAdd'
+import InputAdd from '../components/templates/InputAdd'
 
 function Main() {
   return (
