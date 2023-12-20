@@ -11,7 +11,7 @@ function UserInputMain() {
 
   const [inputs, setInputs] = useState(['']); // 입력 값들을 담을 상태
   const [select, setSelect] = useState(false)
-
+console.log('inputs',inputs)
   // 새로운 입력 추가
   const handleAddInput = () => {
     setInputs([...inputs, '']);

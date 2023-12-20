@@ -2,6 +2,7 @@ import BlackNightInput from '@/components/templates/BlackNightInput';
 import Slot from '@/components/templates/Slot';
 import SlotTwo from '@/components/templates/Slot/SlotTwo';
 import React, { useState } from 'react'
+import { Button } from 'react-bootstrap';
 
 function Modal(props) {
   const [page, setPage] = useState(1)
@@ -18,8 +19,8 @@ function Modal(props) {
           <div className='modalBlack'>
             <div className='modalGrid'>
               <div className='modalInner'>
-                <p>당첨</p>
-                <button onClick={handleClick}>벌칙확인</button>
+                <p style={{color : 'red',fontSize : '26px', fontWeight: '700'}}>당첨!!!!</p>
+                <Button onClick={handleClick}>벌칙확인</Button>
               </div>
             </div>
           </div>

@@ -14,7 +14,6 @@ function SecretFormTwo(props) {
             value={props.value}
             onChange={props.onChange}
           />
-          <p className={props.select ? 'secretInputSucess active' : 'secretInputSucess'}>{props.text}</p>
         </div>
         <div>
         </div>

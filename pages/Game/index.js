@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import Modal from '../Modal';
 import UtillBtn from '@/components/atoms/button/UtillBtn';
 import UserRandomModal from '../Modal/UserRandomModal';
+import Test1 from '@/components/atoms/test/Test1';
+import Test2 from '@/components/atoms/test/Test2';
 
 function Game() {
-  const [hit, setHit] = useState("때려봐")
-  const [clickCount, setClickCount] = useState(Math.floor(Math.random() * 10));
+  const [hit, setHit] = useState(<Test1/>)
+  const [clickCount, setClickCount] = useState(Math.floor(Math.random() * 31));
   const [modal, setModal] = useState(false)
   const [modalTwo, setModalTwo] = useState(false)
   const [userCount, setUserCount] = useState(1)
@@ -16,18 +18,18 @@ function Game() {
   const handleClick = () => {
     setClickCount(prevClickCount => prevClickCount - 1);
     setUserCount(prevUserCount => prevUserCount - 1);
-    setHit("아파");
-    
+    setHit(<Test2/>);
+
     setTimeout(() => {
-      setHit("때려봐");
+      setHit(<Test1/>);
     }, 100);
-  
+
     if (clickCount === 1) {
       setModal(true);
     }
-  
+
     setDisabledBtn(false); // 필요한 경우에만 사용
-  
+
     console.log('userCount : ', userCount);
     console.log('disabledBtn : ', disabledBtn);
   };
@@ -36,11 +38,11 @@ function Game() {
     <>
       <div className='main'>
         <div>
-          <p onClick={() => { handleClick() }}>{hit}</p>
+          <div onClick={() => { handleClick() }}>{hit}</div>
         </div>
         <div>
           <UtillBtn
-            text='테스트'
+            text='STOP!!!!'
             disabled={disabledBtn}
             onClick={() => { setModalTwo(true) }}
           />
@@ -48,7 +50,7 @@ function Game() {
       </div>
       {
         modal &&
-        <Modal 
+        <Modal
           setModal={setModal}
         />
       }

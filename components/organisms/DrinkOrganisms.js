@@ -3,14 +3,15 @@ import UserBtn from '../atoms/button/UserBtn';
 import SecretForm from '../molecules/SecretForm';
 
 function DrinkOrganisms(props) {
+  console.log('props.drinkInput:', props.drinkInput);
   return (
     <>
       <div className='drinkOrganisms'>
         <div>
           <SecretForm
             value={props.value}
-            placeholder='벌주를 입력해주세요'
-            text='벌주는 비밀이지요~'
+            placeholder={props.placeholder}
+            text={props.text}
             drinkInput={props.drinkInput}
             select={props.select}
             setSelect={props.setSelect}

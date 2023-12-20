@@ -13,17 +13,17 @@ export const setValue = (value) => {
   };
 };
 
-export const setDrinkValue = (value) => {
+export const setDrinkValue = (drinkValue) => {
   return {
     type: SET_DRINKVALUE,
-    payload: value
+    payload: drinkValue
   };
 };
 
-export const setBlackNightInput = (value) => {
+export const setBlackNightInput = (blackNightInput) => {
     return {
       type: SET_BLACKNIGHT,
-      payload: value
+      payload: blackNightInput
     };
   };
   

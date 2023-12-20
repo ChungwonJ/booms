@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserBtn from '../atoms/button/UserBtn';
 import DrinkOrganisms from '../organisms/DrinkOrganisms';
 import { useRouter } from 'next/router';
@@ -10,7 +10,7 @@ function DrinkInput() {
   const router = useRouter()
   const [drinkInput, setdrinkInput] = useState(['']); // 입력 값들을 담을 상태
   const [select, setSelect] = useState(false)
-
+  console.log('drinkInput :', drinkInput)
   // 새로운 입력 추가
   const handleAddInput = () => {
     setdrinkInput([...drinkInput, '']);
@@ -40,22 +40,20 @@ function DrinkInput() {
     router.push('/Game')
   };
 
-  useEffect(() => {
-    console.log('select:', select);
-  }, [select]);
-
   return (
     <>
       <div>
-        {drinkInput.map((input, index) => (
+        {drinkInput.map((drinkInput, index) => (
           <div key={index}>
             <DrinkOrganisms
-              value={input}
+              value={drinkInput}
               disabled={drinkInput.length === 1}
               select={select}
               setSelect={setSelect}
+              placeholder={'벌주를 입력해주세요!'}
+              text={'벌주는 비밀~'}
               onChange={(e) => handleChange(index, e.target.value)}
-              onClick={() => { handleRemoveInput() }}
+              onClick={() => { handleRemoveInput(index) }}
             />
           </div>
         ))}

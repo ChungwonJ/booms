@@ -1,120 +1,153 @@
-*{
-    margin: 0 auto;
-    padding: 0;
+* {
+  margin: 0 auto;
+  padding: 0;
 }
 
-header{
-    position: fixed;
-    width: 100%;
-    padding: 30px;
-    display: flex;
+header {
+  position: fixed;
+  width: 100%;
+  padding: 30px;
+  display: flex;
 }
 
-.headerTxt{
-    font-size: 30px;
-    font-weight: 700;
-    cursor: pointer;
+.headerTxt {
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.main{
+.main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.mainUser{
+.startBtn{
+  position: absolute;
+  bottom: 0;
+}
+
+.mainUser {
+  display: flex;
+  gap: 10px;
+
+  &>div:first-child {
+    flex: 2;
+  }
+}
+
+.secretForm {
+  display: flex;
+  gap: 10px;
+
+  &>div:first-child {
+    flex: 2;
+  }
+}
+
+.secretInput {
+  position: relative;
+}
+
+.secretInputSucess {
+  position: absolute;
+  display: none;
+  align-items: center;
+  padding-left: 10px;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #eee;
+  margin: 0;
+  border-radius: 10px;
+
+  &.active {
     display: flex;
-    gap: 10px;
-
-    &>div:first-child{
-        flex: 2;
-    }
+  }
 }
 
-.secretForm{
-    display: flex;
-    gap: 10px;
+.drinkOrganisms {
+  display: flex;
+  gap: 10px;
 
-    &>div:first-child{
-        flex: 2;
-    }
+  &>div:first-child {
+    flex: 2;
+  }
 }
 
-.secretInput{
-    position: relative;
+.modalBlack {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.8);
 }
 
-.secretInputSucess{
-    position: absolute;
-    display: none;
-    align-items: center;
-    padding-left: 10px;
-    top: 0;
-    width: 100%;
-    height: 80%;
-    background-color: #eee;
-    margin: 0;
-    border-radius: 10px;
-
-    &.active{
-        display: flex;
-    }
+.modalGrid {
+  width: 320px;
+  min-height: 150px;
+  max-height: 300px;
+  overflow: auto;
+  text-align: center;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  animation-name: modalBase;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
 }
 
-.drinkOrganisms{
-    display: flex;
-    gap: 10px;
-
-    &>div:first-child{
-        flex: 2;
-    }
-}
-
-.modalBlack{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba($color: #000000, $alpha: 0.8);
-}
-
-.modalGrid{
-    width: 320px;
-    min-height: 150px;
-    max-height: 300px;
-    overflow: auto;
-    text-align: center;
-    background-color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    transform: translate(-50%,-50%);
-    animation-name: modalBase;
-    animation-duration: 0.5s;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-}
-
-.modalInner{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 150px;
+.modalInner {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
 }
 
 @keyframes modalBase {
-    0% {
-      top: 45%;
-      opacity: 0.5;
-    }
-  
-    100% {
-      top: 50%;
-      opacity: 1;
-    }
+  0% {
+    top: 45%;
+    opacity: 0.5;
   }
+
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+.test1{
+  width: 76vw;
+  height: 50vh;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.test2{
+  width: 76vw;
+  height: 50vh;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+}

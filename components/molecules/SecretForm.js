@@ -4,7 +4,7 @@ import HideBtn from '../atoms/button/HideBtn'
 
 function SecretForm(props) {
   const [isHidden, setIsHidden] = useState(false);
-
+console.log('props.value :',props.value)
   const handleClick = () => {
     if (props.value.length === 0) {
       alert('벌주를 입력해주세요')

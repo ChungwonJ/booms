@@ -18,13 +18,13 @@ const SlotMachineThree = ({ symbols, symbolsOne, symbolsTwo, symbolsThree,...pro
     const initialResult = Array.from({ length: symbols.length }, () => '뭐가 나올지 궁금하지?');
     const initialResultOne = Array.from({ length: symbolsOne.length }, () => '뭐가 나올지 궁금하지?');
     const initialResultTwo = Array.from({ length: symbolsTwo.length }, () => '뭐가 나올지 궁금하지?');
-    const initialResultThree = Array.from({ length: symbolsTwo.length }, () => '뭐가 나올지 궁금하지?');
+    const initialResultThree = Array.from({ length: symbolsThree.length }, () => '뭐가 나올지 궁금하지?');
 
     setResult(initialResult);
     setResultOne(initialResultOne);
     setResultTwo(initialResultTwo);
     setResultThree(initialResultThree);
-  }, [symbols, symbolsOne, symbolsTwo, setResultThree]);
+  }, [symbols, symbolsOne, symbolsTwo,setResult,setResultOne,setResultTwo, setResultThree]);
 
   const spinSlot = () => {
     setSpin(!spin);
@@ -41,7 +41,7 @@ const SlotMachineThree = ({ symbols, symbolsOne, symbolsTwo, symbolsThree,...pro
         const newResultOne = resultOne.map(() => symbolsOne[Math.floor(Math.random() * symbolsOne.length)]);
         const newResultTwo = resultTwo.map(() => symbolsTwo[Math.floor(Math.random() * symbolsTwo.length)]);
         const newResultThree = resultThree.map(() => symbolsThree[Math.floor(Math.random() * symbolsThree.length)]);
-
+console.log('result  : ', result)
         // 각 슬롯에 대한 결과 업데이트
         setResult(newResult);
         setResultOne(newResultOne);
@@ -54,7 +54,7 @@ const SlotMachineThree = ({ symbols, symbolsOne, symbolsTwo, symbolsThree,...pro
 
     return () => clearInterval(interval);
   }, [spin, result, resultOne, resultTwo, resultThree, symbols, symbolsOne, symbolsTwo, symbolsThree]);
-
+console.log('symbols : ' , symbols)
   return (
     <div>
       <div>
@@ -75,7 +75,7 @@ const SlotMachineThree = ({ symbols, symbolsOne, symbolsTwo, symbolsThree,...pro
       {buttonCount !== 0 ? (
         <Button onClick={spinSlot}>{spin ? '멈춰!' : '돌리기!'}</Button>)
         : (
-          <div>
+          <div style={{display : 'flex', gap : '10px'}}>
             <Button onClick={() => { router.push('/Drink') }}>벌주만들러 가기</Button>
             <Button onClick={() => { props.onClick() }}>흑기사!</Button>
           </div>

@@ -54,6 +54,8 @@ console.log('blackNightInput : ' ,blackNightInput)
               disabled={blackNightInput.length === 1}
               select={select}
               setSelect={setSelect}
+              placeholder={'소원을 말해봐!'}
+              text={'소원은 비밀~'}
               onChange={(e) => handleChange(index, e.target.value)}
               onClick={() => { handleRemoveInput() }}
             />
