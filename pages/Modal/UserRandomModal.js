@@ -11,9 +11,10 @@ function UserRandomModal(props) {
           <div className='modalInner'>
             <Random
               names={value}
-              text='설정'
-              textTwo='닫기'
+              text='유저선택'
+              textTwo='확인'
               modal={props.setModalTwo}
+              disabledBtn={props.disabledBtn}
             />
           </div>
         </div>

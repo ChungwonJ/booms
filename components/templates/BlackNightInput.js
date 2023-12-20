@@ -3,41 +3,41 @@ import UserBtn from '../atoms/button/UserBtn';
 import DrinkOrganisms from '../organisms/DrinkOrganisms';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { setDrinkValue } from '@/redux/Store';
+import { setBlackNightInput } from '@/redux/Store';
 
-function DrinkInput() {
+function BlackNightInput(props) {
   const dispatch = useDispatch();
   const router = useRouter()
-  const [drinkInput, setdrinkInput] = useState(['']); // 입력 값들을 담을 상태
+  const [blackNightInput, setblackNightInput] = useState(['']); // 입력 값들을 담을 상태
   const [select, setSelect] = useState(false)
-
+console.log('blackNightInput : ' ,blackNightInput)
   // 새로운 입력 추가
   const handleAddInput = () => {
-    setdrinkInput([...drinkInput, '']);
+    setblackNightInput([...blackNightInput, '']);
     setSelect(false)
   };
 
   // 입력 제거
   const handleRemoveInput = (index) => {
-    const newdrinkInput = [...drinkInput];
-    newdrinkInput.splice(index, 1);
-    setdrinkInput(newdrinkInput);
+    const newblackNightInput = [...blackNightInput];
+    newblackNightInput.splice(index, 1);
+    setblackNightInput(newblackNightInput);
   };
 
   // 입력 값이 변경될 때 호출되는 함수
   const handleChange = (index, value) => {
-    const newdrinkInput = [...drinkInput];
-    newdrinkInput[index] = value;
-    setdrinkInput(newdrinkInput);
+    const newblackNightInput = [...blackNightInput];
+    newblackNightInput[index] = value;
+    setblackNightInput(newblackNightInput);
   };
 
   const handleClick = () => {
-    if (select === false || drinkInput.some((value) => value.trim() === '')) {
-      alert('벌주설정을 완료해주세요')
+    if (select === false || blackNightInput.some((value) => value.trim() === '')) {
+      alert('흑기사 소원을 입력해주세요')
       return
     }
-    dispatch(setDrinkValue(drinkInput));
-    router.push('/Game')
+    dispatch(setBlackNightInput(blackNightInput));
+    props.onClick()
   };
 
   useEffect(() => {
@@ -47,11 +47,11 @@ function DrinkInput() {
   return (
     <>
       <div>
-        {drinkInput.map((input, index) => (
+        {blackNightInput.map((input, index) => (
           <div key={index}>
             <DrinkOrganisms
               value={input}
-              disabled={drinkInput.length === 1}
+              disabled={blackNightInput.length === 1}
               select={select}
               setSelect={setSelect}
               onChange={(e) => handleChange(index, e.target.value)}
@@ -76,4 +76,4 @@ function DrinkInput() {
   );
 }
 
-export default DrinkInput;
+export default BlackNightInput;

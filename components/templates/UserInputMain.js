@@ -32,11 +32,11 @@ console.log('inputs :' ,inputs)
   };
 
   const handleClick = () => {
-    if(inputs.length === 0 ){
-      alert('아이디를 입력해주세요')
+    if (inputs.some((value) => value.trim() === '')) {
+      alert('아이디를 입력해주세요');
       return;
     } else {
-      router.push('/Drink')
+      router.push('/Drink');
       dispatch(setValue(inputs));
     }
   };

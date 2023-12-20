@@ -82,6 +82,10 @@ header{
 
 .modalGrid{
     width: 320px;
+    min-height: 150px;
+    max-height: 300px;
+    overflow: auto;
+    text-align: center;
     background-color: #fff;
     position: absolute;
     top: 50%;
@@ -96,6 +100,11 @@ header{
 
 .modalInner{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
 }
 
 @keyframes modalBase {

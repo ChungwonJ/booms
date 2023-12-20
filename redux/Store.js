@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 // 액션 타입 정의
 const SET_VALUE = 'SET_VALUE';
 const SET_DRINKVALUE = 'SET_DRINKVALUE';
+const SET_BLACKNIGHT = 'SET_BLACKNIGHT';
 
 // 액션 생성자 함수
 export const setValue = (value) => {
@@ -19,10 +20,18 @@ export const setDrinkValue = (value) => {
   };
 };
 
+export const setBlackNightInput = (value) => {
+    return {
+      type: SET_BLACKNIGHT,
+      payload: value
+    };
+  };
+  
 // 리듀서
 const initialState = {
   value: [],
-  dinkValue: []
+  drinkValue: [],
+  blackNightInput : []
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,11 +41,19 @@ const reducer = (state = initialState, action) => {
         ...state,
         value: action.payload
       };
+
     case SET_DRINKVALUE:
       return {
         ...state,
-        dinkValue: action.payload
+        drinkValue: action.payload
       };
+
+      case SET_BLACKNIGHT:
+        return {
+          ...state,
+          blackNightInput: action.payload
+        };
+        
     default:
       return state;
   }

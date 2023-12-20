@@ -2,6 +2,8 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 
 function UserBtn(props) {
+    
+console.log('props.disabled : ',props.disabled)
   return (
     <>
         <Button
