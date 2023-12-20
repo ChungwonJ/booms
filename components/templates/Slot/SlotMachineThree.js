@@ -57,7 +57,7 @@ console.log('result  : ', result)
 console.log('symbols : ' , symbols)
   return (
     <div>
-      <div>
+      <div className='slotTxt'>
         {/* 각각의 슬롯에 대한 결과 표시 */}
         <p style={{ fontSize: '24px', marginBottom: '10px' }}>
           {result[0]}
@@ -72,14 +72,16 @@ console.log('symbols : ' , symbols)
           {resultThree[0]}
         </p>
       </div>
+      <div className='slotBtn'>
       {buttonCount !== 0 ? (
         <Button onClick={spinSlot}>{spin ? '멈춰!' : '돌리기!'}</Button>)
         : (
-          <div style={{display : 'flex', gap : '10px'}}>
+          <div style={{display : 'flex', gap : '10px', justifyContent : 'center'}}>
             <Button onClick={() => { router.push('/Drink') }}>벌주만들러 가기</Button>
             <Button onClick={() => { props.onClick() }}>흑기사!</Button>
           </div>
         )}
+        </div>
     </div>
   );
 };

@@ -36,12 +36,10 @@ const SlotMachineFour = ({ symbols }) => {
 
   return (
     <div>
-      <div>
-
+      <div className='slotTxt'>
         <p style={{ fontSize: '24px', marginBottom: '10px' }}>
           {result[0]}
         </p>
-
       </div>
       {buttonCount !== 0 ? (
         <Button onClick={spinSlot}>{spin ? '멈춰!' : '돌리기!'}</Button>)

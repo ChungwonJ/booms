@@ -33,7 +33,7 @@ function Modal(props) {
         <>
           <div className='modalBlack'>
             <div className='modalGrid'>
-              <div className='modalInner'>
+              <div className='modalInner modalInnerTwo'>
                 <Slot
                   onClick={handleClick}
                 />

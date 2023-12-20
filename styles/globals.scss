@@ -90,7 +90,6 @@ header {
 
 .modalGrid {
   width: 320px;
-  min-height: 150px;
   max-height: 300px;
   overflow: auto;
   text-align: center;
@@ -112,7 +111,12 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 150px;
+}
+
+.slotTxt{
+  height: 200px;
+  overflow: auto;
+  margin-bottom: 20px;
 }
 
 @keyframes modalBase {
