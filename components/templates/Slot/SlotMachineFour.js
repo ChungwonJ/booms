@@ -36,7 +36,7 @@ const SlotMachineFour = ({ symbols }) => {
 
   return (
     <div>
-      <div className='slotTxt'>
+      <div className='slotTxtTwo'>
         <p style={{ fontSize: '24px', marginBottom: '10px' }}>
           {result[0]}
         </p>
