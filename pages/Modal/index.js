@@ -3,8 +3,10 @@ import Slot from '@/components/templates/Slot';
 import SlotTwo from '@/components/templates/Slot/SlotTwo';
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
+import { useRouter } from 'next/router';
 
 function Modal(props) {
+  const router = useRouter()
   const [page, setPage] = useState(1)
 
   const handleClick = () => {
@@ -54,7 +56,7 @@ function Modal(props) {
                   onClick={handleClick}
                 />
                 <div style={{marginTop : '5px' ,width: '100%'}}>
-                <Button style={{width: '100%'}} onClick={() => { setPage(page - 1) }}>취소</Button>
+                <Button style={{width: '100%'}} onClick={() => { router.push('/Drink') }}>취소</Button>
                 </div>
               </div>
             </div>
