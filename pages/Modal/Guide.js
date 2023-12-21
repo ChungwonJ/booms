@@ -7,7 +7,7 @@ function Guide(props) {
     <>
       <div className='modalBlack'>
         <div className='modalGrid'>
-          <div className='modalInner'>
+          <div className='modalInner' style={{textAlign : 'start'}}>
             <p>
               1. 이름을 입력한다 (인원수만큼 추가버튼을 누른다)
               <br />
