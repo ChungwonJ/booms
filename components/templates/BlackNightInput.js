@@ -66,6 +66,7 @@ console.log('blackNightInput : ' ,blackNightInput)
           <UserBtn
             btnTxt='추가하기'
             onClick={() => { handleAddInput() }}
+            disabled={select === false}
             variant="primary"
           />
         </div>

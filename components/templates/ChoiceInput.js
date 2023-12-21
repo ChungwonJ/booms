@@ -64,6 +64,7 @@ console.log('quanity : ' ,quanity)
         <div style={{ display: 'flex', gap: '20px' }}>
           <UserBtn
             btnTxt='추가하기'
+            disabled={select === false}
             onClick={() => { handleAddInput() }}
             variant="primary"
           />
