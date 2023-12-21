@@ -1,8 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import UtillBtn from '../atoms/button/UtillBtn';
 
-function Random({ names, text, modal, textTwo, disabledBtn }) {
-  const [selectedName, setSelectedName] = useState(null);
+function Random({ names, text, modal, textTwo, disabledBtn, selectedName, setSelectedName }) {
 
   const handleSelectRandomName = () => {
     const randomIndex = Math.floor(Math.random() * names.length);
@@ -14,10 +13,10 @@ function Random({ names, text, modal, textTwo, disabledBtn }) {
     } else {
       setSelectedName(null); // 또는 원하는 처리를 추가하세요.
     }
-    console.log('selectedName : ' , selectedName)
+    console.log('selectedName : ', selectedName)
   };
 
-  const handleClick = () =>{
+  const handleClick = () => {
     modal(false)
     disabledBtn(true)
   }
@@ -26,15 +25,15 @@ function Random({ names, text, modal, textTwo, disabledBtn }) {
     <>
       <div>
         {selectedName ? (
-          <div style={{textAlign  : 'center'}}>
-            <h1 style={{marginBottom : '30px'}}>{selectedName} 당첨!</h1>
+          <div style={{ textAlign: 'center' }}>
+            <h1 style={{ marginBottom: '30px' }}>{selectedName} 당첨!</h1>
             <UtillBtn
               text={textTwo}
               onClick={() => { handleClick() }}
             />
           </div>
         ) : (
-          <div style={{display : 'flex', alignItems : 'center'}}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <UtillBtn
               text={text}
               onClick={() => { handleSelectRandomName() }}

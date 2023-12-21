@@ -15,6 +15,8 @@ function UserRandomModal(props) {
               textTwo='확인'
               modal={props.setModalTwo}
               disabledBtn={props.disabledBtn}
+              selectedName={props.selectedName}
+              setSelectedName={props.setSelectedName}
             />
           </div>
         </div>
