@@ -7,7 +7,6 @@ import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    const [modal , setModal]=useState(false)
   return (
     <>
       <Head>
