@@ -4,8 +4,10 @@ import DrinkOrganisms from '../organisms/DrinkOrganisms';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { setQuanity } from '@/redux/Store';
+import { useTranslation } from 'react-i18next';
 
 function ChoiceInput(props) {
+    const { t } = useTranslation();
   const dispatch = useDispatch();
   const router = useRouter()
   const [quanity, setquanity] = useState(['']); // 입력 값들을 담을 상태
@@ -33,7 +35,7 @@ console.log('quanity : ' ,quanity)
 
   const handleClick = () => {
     if (select === false || quanity.some((value) => value.trim() === '')) {
-      alert('잔수를 입력해주세요')
+      alert(t('choice1'))
       return
     }
     dispatch(setQuanity(quanity));
@@ -54,8 +56,8 @@ console.log('quanity : ' ,quanity)
               disabled={quanity.length === 1}
               select={select}
               setSelect={setSelect}
-              placeholder={'몇잔을 선택할까요?'}
-              text={'잔수는 비밀~~'}
+              placeholder={t('choice2')}
+              text={t('choice3')}
               onChange={(e) => handleChange(index, e.target.value)}
               onClick={() => { handleRemoveInput() }}
             />
@@ -63,7 +65,7 @@ console.log('quanity : ' ,quanity)
         ))}
         <div style={{ display: 'flex', gap: '20px' }}>
           <UserBtn
-            btnTxt='추가하기'
+            btnTxt={t('main3')}
             disabled={select === false}
             onClick={() => { handleAddInput() }}
             variant="primary"
@@ -71,7 +73,7 @@ console.log('quanity : ' ,quanity)
         </div>
         <UserBtn
           onClick={() => { handleClick() }}
-          btnTxt='시작하기'
+          btnTxt={t('main4')}
           variant="success"
         />
       </div>

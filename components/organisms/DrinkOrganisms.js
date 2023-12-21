@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import UserBtn from '../atoms/button/UserBtn';
 import SecretForm from '../molecules/SecretForm';
+import { useTranslation } from 'react-i18next';
 
 function DrinkOrganisms(props) {
+    const { t } = useTranslation();
   console.log('props.drinkInput:', props.drinkInput);
   return (
     <>
@@ -20,7 +22,7 @@ function DrinkOrganisms(props) {
         </div>
         <div>
           <UserBtn
-            btnTxt='삭제'
+            btnTxt={t('main2')}
             variant="danger"
             disabled={props.disabled}
             onClick={props.onClick}

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 const SlotMachineThree = ({ symbols, symbolsOne, symbolsTwo, symbolsThree,...props }) => {
   const [spin, setSpin] = useState(false);
   const [buttonCount, setButtonCount] = useState(2);
   const router = useRouter()
+  const { t } = useTranslation();
 
   // 각 슬롯에 대한 결과 배열
   const [result, setResult] = useState([]);
@@ -15,10 +17,10 @@ const SlotMachineThree = ({ symbols, symbolsOne, symbolsTwo, symbolsThree,...pro
 
   // 컴포넌트가 마운트될 때 초기값을 각각 다른 배열로 설정
   useEffect(() => {
-    const initialResult = Array.from({ length: symbols.length }, () => '뭐가 나올지 궁금하지?');
-    const initialResultOne = Array.from({ length: symbolsOne.length }, () => '뭐가 나올지 궁금하지?');
-    const initialResultTwo = Array.from({ length: symbolsTwo.length }, () => '뭐가 나올지 궁금하지?');
-    const initialResultThree = Array.from({ length: symbolsThree.length }, () => '뭐가 나올지 궁금하지?');
+    const initialResult = Array.from({ length: symbols.length }, () => t('slot1'));
+    const initialResultOne = Array.from({ length: symbolsOne.length }, () => t('slot1'));
+    const initialResultTwo = Array.from({ length: symbolsTwo.length }, () => t('slot1'));
+    const initialResultThree = Array.from({ length: symbolsThree.length }, () => t('slot1'));
 
     setResult(initialResult);
     setResultOne(initialResultOne);
@@ -66,19 +68,19 @@ console.log('symbols : ' , symbols)
           {resultOne[0]}
         </p>
         <p style={{ fontSize: '24px', marginBottom: '10px' }}>
-          {resultTwo[0]}
+          {t(resultTwo[0])}
         </p>
         <p style={{ fontSize: '24px', marginBottom: '10px' }}>
-          {resultThree[0]}
+          {t(resultThree[0])}
         </p>
       </div>
       <div className='slotBtn'>
       {buttonCount !== 0 ? (
-        <Button onClick={spinSlot}>{spin ? '멈춰!' : '돌리기!'}</Button>)
+        <Button onClick={spinSlot}>{spin ? t('slot2') : t('slot3')}</Button>)
         : (
           <div style={{display : 'flex', gap : '10px', justifyContent : 'center'}}>
-            <Button onClick={() => { router.push('/Drink') }}>벌주만들러 가기</Button>
-            <Button onClick={() => { props.onClick() }}>흑기사!</Button>
+            <Button onClick={() => { router.push('/Drink') }}>{t('slot4')}</Button>
+            <Button onClick={() => { props.onClick() }}>{t('slot5')}</Button>
           </div>
         )}
         </div>

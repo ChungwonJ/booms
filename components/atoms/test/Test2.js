@@ -1,10 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 function Test2() {
+    const { t } = useTranslation();
   return (
     <>
     <div className='test2'>
-      술먹을 준비가되었나?ㅋ
+      {t('test1')}
     </div>
   </>
   )

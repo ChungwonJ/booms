@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import UserInput from '../atoms/input/UserInput'
-import HideBtn from '../atoms/button/HideBtn'
 
 function SecretFormTwo(props) {
   return (

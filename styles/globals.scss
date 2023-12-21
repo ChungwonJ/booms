@@ -168,3 +168,15 @@ header {
 .guide{
     cursor: pointer;
 }
+
+.lang{
+    position: absolute;
+    top: 95px;
+    right: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}

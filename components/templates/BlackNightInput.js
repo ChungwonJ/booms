@@ -5,8 +5,10 @@ import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { setBlackNightInput } from '@/redux/Store';
 import { Button } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 function BlackNightInput(props) {
+    const { t } = useTranslation();
   const dispatch = useDispatch();
   const router = useRouter()
   const [blackNightInput, setblackNightInput] = useState(['']); // 입력 값들을 담을 상태
@@ -34,7 +36,7 @@ console.log('blackNightInput : ' ,blackNightInput)
 
   const handleClick = () => {
     if (select === false || blackNightInput.some((value) => value.trim() === '')) {
-      alert('흑기사 소원을 입력해주세요')
+      alert(t('black1'))
       return
     }
     dispatch(setBlackNightInput(blackNightInput));
@@ -55,8 +57,8 @@ console.log('blackNightInput : ' ,blackNightInput)
               disabled={blackNightInput.length === 1}
               select={select}
               setSelect={setSelect}
-              placeholder={'소원을 말해봐!'}
-              text={'소원은 비밀~'}
+              placeholder={t('black2')}
+              text={t('black3')}
               onChange={(e) => handleChange(index, e.target.value)}
               onClick={() => { handleRemoveInput() }}
             />
@@ -64,7 +66,7 @@ console.log('blackNightInput : ' ,blackNightInput)
         ))}
         <div style={{ display: 'flex', gap: '20px' }}>
           <UserBtn
-            btnTxt='추가하기'
+            btnTxt={t('main3')}
             onClick={() => { handleAddInput() }}
             disabled={select === false}
             variant="primary"
@@ -72,7 +74,7 @@ console.log('blackNightInput : ' ,blackNightInput)
         </div>
         <UserBtn
           onClick={() => { handleClick() }}
-          btnTxt='시작하기'
+          btnTxt={t('main4')}
           variant="success"
         />
       </div>

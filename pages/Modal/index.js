@@ -4,8 +4,10 @@ import SlotTwo from '@/components/templates/Slot/SlotTwo';
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 function Modal(props) {
+  const { t } = useTranslation();
   const router = useRouter()
   const [page, setPage] = useState(1)
 
@@ -21,8 +23,8 @@ function Modal(props) {
           <div className='modalBlack'>
             <div className='modalGrid'>
               <div className='modalInner'>
-                <p style={{ color: 'red', fontSize: '26px', fontWeight: '700' }}>당첨!!!!</p>
-                <Button onClick={handleClick}>벌칙확인</Button>
+                <p style={{ color: 'red', fontSize: '26px', fontWeight: '700' }}>{t('modal1')}</p>
+                <Button onClick={handleClick}>{t('modal2')}</Button>
               </div>
             </div>
           </div>
@@ -56,7 +58,7 @@ function Modal(props) {
                   onClick={handleClick}
                 />
                 <div style={{marginTop : '5px' ,width: '100%'}}>
-                <Button style={{width: '100%'}} onClick={() => { router.push('/Drink') }}>취소</Button>
+                <Button style={{width: '100%'}} onClick={() => { router.push('/Drink') }}>{t('modal3')}</Button>
                 </div>
               </div>
             </div>

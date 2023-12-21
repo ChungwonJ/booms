@@ -1,15 +1,17 @@
 import React from 'react'
 import UserBtn from '../atoms/button/UserBtn'
 import SecretFormTwo from '../molecules/SecretFormTwo'
+import { useTranslation } from 'react-i18next';
 
 function UserOrgamisms(props) {
+  const { t } = useTranslation();
   return (
     <>
       <div className='drinkOrganisms'>
         <div>
           <SecretFormTwo
             value={props.value}
-            placeholder='이름을 입력해주세요'
+            placeholder={t('main1')}
             select={props.select}
             setSelect={props.setSelect}
             onChange={props.onChange}
@@ -17,7 +19,7 @@ function UserOrgamisms(props) {
         </div>
         <div>
           <UserBtn
-            btnTxt='삭제'
+            btnTxt={t('main2')}
             variant="danger"
             disabled={props.disabled}
             onClick={props.onClick}

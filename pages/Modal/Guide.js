@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 
 function Guide(props) {
+    console.log('props.setModal : ',props.setModal)
   return (
     <>
       <div className='modalBlack'>

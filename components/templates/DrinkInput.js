@@ -4,8 +4,10 @@ import DrinkOrganisms from '../organisms/DrinkOrganisms';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { setDrinkValue } from '@/redux/Store';
+import { useTranslation } from 'react-i18next';
 
 function DrinkInput() {
+    const { t } = useTranslation();
   const dispatch = useDispatch();
   const router = useRouter()
   const [drinkInput, setdrinkInput] = useState(['']); // 입력 값들을 담을 상태
@@ -33,7 +35,7 @@ function DrinkInput() {
 
   const handleClick = () => {
     if (select === false || drinkInput.some((value) => value.trim() === '')) {
-      alert('벌주설정을 완료해주세요')
+      alert(t('drink1'))
       return
     }
     dispatch(setDrinkValue(drinkInput));
@@ -50,8 +52,8 @@ function DrinkInput() {
               disabled={drinkInput.length === 1}
               select={select}
               setSelect={setSelect}
-              placeholder={'벌주를 입력해주세요!'}
-              text={'벌주는 비밀~'}
+              placeholder={t('drink2')}
+              text={t('drink3')}
               onChange={(e) => handleChange(index, e.target.value)}
               onClick={() => { handleRemoveInput(index) }}
             />
@@ -59,7 +61,7 @@ function DrinkInput() {
         ))}
         <div style={{ display: 'flex', gap: '20px' }}>
           <UserBtn
-            btnTxt='추가하기'
+            btnTxt={t('main3')}
             disabled={select === false}
             onClick={() => { handleAddInput() }}
             variant="primary"
@@ -67,7 +69,7 @@ function DrinkInput() {
         </div>
         <UserBtn
           onClick={() => { handleClick() }}
-          btnTxt='시작하기'
+          btnTxt={t('main4')}
           variant="success"
         />
       </div>
