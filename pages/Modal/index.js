@@ -23,7 +23,7 @@ function Modal(props) {
           <div className='modalBlack'>
             <div className='modalGrid'>
               <div className='modalInner'>
-                <p style={{ color: 'red', fontSize: '26px', fontWeight: '700' }}>{props.selectedName} {t('modal1')}</p>
+                <p style={{ color: 'red', fontSize: '26px', fontWeight: '700' }}><span style={{color : '#000'}}>{props.selectedName}</span> {t('modal1')}</p>
                 <Button onClick={handleClick}>{t('modal2')}</Button>
               </div>
             </div>
