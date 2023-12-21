@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 const SET_VALUE = 'SET_VALUE';
 const SET_DRINKVALUE = 'SET_DRINKVALUE';
 const SET_BLACKNIGHT = 'SET_BLACKNIGHT';
+const SET_QUANITY= 'SET_QUANITY';
 
 // 액션 생성자 함수
 export const setValue = (value) => {
@@ -26,12 +27,20 @@ export const setBlackNightInput = (blackNightInput) => {
       payload: blackNightInput
     };
   };
+
+  export const setQuanity = (quanity) => {
+    return {
+      type: SET_QUANITY,
+      payload: quanity
+    };
+  };
   
 // 리듀서
 const initialState = {
   value: [],
   drinkValue: [],
-  blackNightInput : []
+  blackNightInput : [],
+  quanity:[]
 };
 
 const reducer = (state = initialState, action) => {
@@ -53,6 +62,12 @@ const reducer = (state = initialState, action) => {
           ...state,
           blackNightInput: action.payload
         };
+
+        case SET_QUANITY:
+            return {
+              ...state,
+              quanity: action.payload
+            };
         
     default:
       return state;

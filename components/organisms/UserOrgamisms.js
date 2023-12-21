@@ -9,7 +9,7 @@ function UserOrgamisms(props) {
         <div>
           <SecretFormTwo
             value={props.value}
-            placeholder='아이디를 입력해주세요'
+            placeholder='이름을 입력해주세요'
             select={props.select}
             setSelect={props.setSelect}
             onChange={props.onChange}

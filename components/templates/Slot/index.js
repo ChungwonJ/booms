@@ -1,17 +1,18 @@
 import React from 'react'
 import SlotMachineThree from './SlotMachineThree';
 import { useSelector } from 'react-redux';
-import { QUANITY, WHO, HOW } from '@/define/PenaltyList';
+import { WHO, HOW } from '@/define/PenaltyList';
 
 function Slot(props) {
   const drinkValue = useSelector(state => state.drinkValue);
+  const quanity = useSelector(state => state.quanity);
   console.log('drinkValue : ', drinkValue)
   return (
     <>
       <div>
         <SlotMachineThree
           symbols={drinkValue}
-          symbolsOne={QUANITY}
+          symbolsOne={quanity}
           symbolsTwo={WHO}
           symbolsThree={HOW}
           onClick={props.onClick}

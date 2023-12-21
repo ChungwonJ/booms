@@ -19,7 +19,7 @@ function Modal(props) {
           <div className='modalBlack'>
             <div className='modalGrid'>
               <div className='modalInner'>
-                <p style={{color : 'red',fontSize : '26px', fontWeight: '700'}}>당첨!!!!</p>
+                <p style={{ color: 'red', fontSize: '26px', fontWeight: '700' }}>당첨!!!!</p>
                 <Button onClick={handleClick}>벌칙확인</Button>
               </div>
             </div>
@@ -44,35 +44,38 @@ function Modal(props) {
       );
       break;
 
-      case 3:
-        Component = (
-          <>
-            <div className='modalBlack'>
-              <div className='modalGrid'>
-                <div className='modalInner'>
-                    <BlackNightInput
-                      onClick={handleClick}
-                    />
+    case 3:
+      Component = (
+        <>
+          <div className='modalBlack'>
+            <div className='modalGrid'>
+              <div className='modalInner'>
+                <BlackNightInput
+                  onClick={handleClick}
+                />
+                <div style={{marginTop : '5px' ,width: '100%'}}>
+                <Button style={{width: '100%'}} onClick={() => { setPage(page - 1) }}>취소</Button>
                 </div>
               </div>
             </div>
-          </>
-        );
-        break;
+          </div>
+        </>
+      );
+      break;
 
-        case 4:
-          Component = (
-            <>
-              <div className='modalBlack'>
-                <div className='modalGrid'>
-                  <div className='modalInner'>
-                      <SlotTwo/>
-                  </div>
-                </div>
+    case 4:
+      Component = (
+        <>
+          <div className='modalBlack'>
+            <div className='modalGrid'>
+              <div className='modalInner'>
+                <SlotTwo />
               </div>
-            </>
-          );
-          break;
+            </div>
+          </div>
+        </>
+      );
+      break;
   }
 
   return (

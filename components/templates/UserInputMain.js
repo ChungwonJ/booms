@@ -33,7 +33,7 @@ console.log('inputs :' ,inputs)
 
   const handleClick = () => {
     if (inputs.some((value) => value.trim() === '')) {
-      alert('아이디를 입력해주세요');
+      alert('이름을 입력해주세요');
       return;
     } else {
       router.push('/Drink');
@@ -48,7 +48,7 @@ console.log('inputs :' ,inputs)
           <div key={index} className='mainUser'>
             <UserOrgamisms
               value={input}
-              placeholder="유저를 입력해주세요"
+              placeholder="이름을 입력해주세요"
               btnTxt='삭제'
               variant="danger"
               select={select}
