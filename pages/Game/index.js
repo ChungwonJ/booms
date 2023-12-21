@@ -12,7 +12,6 @@ function Game() {
   const [modalTwo, setModalTwo] = useState(false)
   const [userCount, setUserCount] = useState(1)
   const [disabledBtn, setDisabledBtn] = useState(true)
-  const [selectedName, setSelectedName] = useState(null);
 
   console.log('clickCount :', clickCount)
 
@@ -53,7 +52,6 @@ function Game() {
         modal &&
         <Modal
           setModal={setModal}
-          selectedName={selectedName}
         />
       }
 
@@ -62,8 +60,6 @@ function Game() {
         <UserRandomModal
           setModalTwo={setModalTwo}
           disabledBtn={setDisabledBtn}
-          selectedName={selectedName}
-          setSelectedName={setSelectedName}
         />
       }
     </>
