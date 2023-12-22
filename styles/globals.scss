@@ -114,12 +114,16 @@ header {
   z-index: 10;
 }
 
+.guideModalGrid{
+  width: 90%;
+}
+
 .modalGridTwo {
   width: auto;
 }
 
 .modalInner {
-  height: 300px;
+  height: auto;
   overflow: auto;
   padding: 20px;
   display: flex;
@@ -130,6 +134,18 @@ header {
 
 .guideModal{
   display: block;
+  height: 70vh;
+}
+
+.guides{
+  &>img{
+    width: 100%;
+  }
+
+  &>span{
+    color: red;
+    font-weight: 700;
+  }
 }
 
 .guideBtn{
