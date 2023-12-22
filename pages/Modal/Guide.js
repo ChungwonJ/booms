@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 
 function Guide(props) {
-    console.log('props.setModal : ',props.setModal)
+  const [modalHidden, setModalHidden] = useState('modalBlack')
+  console.log('props.setModal : ', props.setModal)
+  const handleClick = () => {
+    setModalHidden('modalBlack active')
+    props.setModal(false)
+  }
+  
   return (
     <>
-      <div className='modalBlack'>
+      <div className={modalHidden}>
         <div className='modalGrid'>
-          <div className='modalInner' style={{textAlign : 'start'}}>
+          <div className='modalInner guideModal' style={{ textAlign: 'start' }}>
+            <h1 style={{textAlign : 'center',color : 'red', fontWeight:'700',marginBottom:'20px'}}>게임가이드</h1>
             <p>
               1. 이름을 입력한다 (인원수만큼 추가버튼을 누른다)
               <br />
@@ -69,8 +76,8 @@ function Guide(props) {
               <br />
               14. 소원을 끝마치면 다시 벌주를 제조하러 돌아갑니다.
             </p>
-            <Button onClick={() => { props.setModal(false) }}>닫기</Button>
           </div>
+          <Button className='guideBtn' onClick={() => { handleClick() }}>닫기</Button>
         </div>
       </div>
     </>

@@ -62,7 +62,7 @@ function UserInputMain() {
         ))}
         <div style={{ display: 'flex', gap: '20px' }}>
           <UserBtn
-            btnTxt={t('main3')}
+            btnTxt={t('main3-1')}
             onClick={() => { handleAddInput() }}
             variant="primary"
           />

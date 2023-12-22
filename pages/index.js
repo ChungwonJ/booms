@@ -3,10 +3,12 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Main from './Main'
 import { useState } from 'react'
+import Guide from './Modal/Guide'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [modal,setModal] = useState(false)
   return (
     <>
       <Head>
@@ -16,6 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         
       </Head>
+      <Guide setModal={setModal}/>
       <Main />
     </>
   )

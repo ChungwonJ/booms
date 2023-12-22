@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
         </I18nextProvider>
       </Provider>
 
-      <div className='lang'>
+      {/* <div className='lang'>
         <label className="cursor-pointer">
           <input
             className="cursor-pointer"
@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
           한국어
         </label>
 
-        {/* <label className="cursor-pointer">
+        <label className="cursor-pointer">
           <input
             className="cursor-pointer"
             style={{ marginRight: "3px" }}
@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }) {
             onChange={changeLang}
           />
           English
-        </label> */}
+        </label>
 
         <label className="cursor-pointer">
           <input
@@ -65,7 +65,7 @@ export default function App({ Component, pageProps }) {
           />
           日本語
         </label>
-      </div>
+      </div> */}
     </>
   );
 }
