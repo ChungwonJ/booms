@@ -7,7 +7,7 @@ import { setDrinkValue } from '@/redux/Store';
 import { useTranslation } from 'react-i18next';
 
 function DrinkInput() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const router = useRouter()
   const [drinkInput, setdrinkInput] = useState(['']); // 입력 값들을 담을 상태
@@ -69,6 +69,7 @@ function DrinkInput() {
         </div>
         <UserBtn
           onClick={() => { handleClick() }}
+          disabled={select === false}
           btnTxt={t('main4')}
           variant="success"
         />

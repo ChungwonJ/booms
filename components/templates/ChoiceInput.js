@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserBtn from '../atoms/button/UserBtn';
 import DrinkOrganisms from '../organisms/DrinkOrganisms';
 import { useRouter } from 'next/router';
@@ -7,12 +7,12 @@ import { setQuanity } from '@/redux/Store';
 import { useTranslation } from 'react-i18next';
 
 function ChoiceInput(props) {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const router = useRouter()
   const [quanity, setquanity] = useState(['']); // 입력 값들을 담을 상태
   const [select, setSelect] = useState(false)
-console.log('quanity : ' ,quanity)
+  console.log('quanity : ', quanity)
   // 새로운 입력 추가
   const handleAddInput = () => {
     setquanity([...quanity, '']);
@@ -34,7 +34,7 @@ console.log('quanity : ' ,quanity)
   };
 
   const handleClick = () => {
-    if ( quanity.some((value) => value.trim() === '')) {
+    if (quanity.some((value) => value.trim() === '')) {
       alert(t('choice1'))
       return
     }
@@ -72,6 +72,7 @@ console.log('quanity : ' ,quanity)
           />
         </div>
         <UserBtn
+          disabled={select === false}
           onClick={() => { handleClick() }}
           btnTxt={t('main4')}
           variant="success"
