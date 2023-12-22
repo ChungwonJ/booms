@@ -36,7 +36,7 @@ function Game() {
 
   return (
     <>
-      <div className='main'>
+      <div className='main main2'>
         <div>
           <div onClick={() => { handleClick() }}>{hit}</div>
         </div>
