@@ -34,7 +34,7 @@ console.log('quanity : ' ,quanity)
   };
 
   const handleClick = () => {
-    if (select === false || quanity.some((value) => value.trim() === '')) {
+    if ( quanity.some((value) => value.trim() === '')) {
       alert(t('choice1'))
       return
     }

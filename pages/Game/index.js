@@ -22,7 +22,7 @@ function Game() {
 
     setTimeout(() => {
       setHit(<Test1/>);
-    }, 100);
+    }, 200);
 
     if (clickCount === 1) {
       setModal(true);

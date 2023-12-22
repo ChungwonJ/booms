@@ -6,7 +6,8 @@ function Test1() {
   return (
     <>
       <div className='test1'>
-        {t('test2')}
+        <h1>클릭하세용~~~</h1>
+        <img src="/images/ca1.png" alt=""/>
       </div>
     </>
   )

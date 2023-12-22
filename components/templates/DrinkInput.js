@@ -34,7 +34,7 @@ function DrinkInput() {
   };
 
   const handleClick = () => {
-    if (select === false || drinkInput.some((value) => value.trim() === '')) {
+    if (drinkInput.some((value) => value.trim() === '')) {
       alert(t('drink1'))
       return
     }
